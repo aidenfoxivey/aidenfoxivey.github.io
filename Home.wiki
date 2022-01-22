@@ -1,0 +1,71 @@
+= Stats Wiki =
+
+== Overview of Topics ==
+All chapters are in reference to _Biostatistics: The Bare Essentials_.
+  1. Graphing (Ch. 1,2)
+  2. Descriptive Statistics (Ch. 3,5)
+  3. Probability (Ch. 4)
+  4. Inferential Statistics (Ch. 6)
+  5. Hypothesis Testing (Ch. 7,8,10,21 + Pg. 263) 
+  6. Correlation  (Ch. 13)
+  7. Analysis of Frequency Data (Ch. 23)
+  8. Non-parametric tests
+  9. Measure of Impact (Ch. 26)
+
+== Specifics within Topics ==
+
+=== Graphing === 
+[[Graphing]]
+  * Measurement and measurement scales.
+  * Box and whisker charts
+  * Charts and tables
+
+=== Descriptive Statistics ===
+[[Descriptive Statistics]]
+  * Mean, median, mode
+  * Range, percentiles, quartiles, skewness, variation, standard deviation
+
+=== Probability ===
+[[Probability]]
+  * Additive and multiplicative properties
+  * Normal Distribution
+    * z score
+  * Sampling Distribution
+    * central limit theorem
+    * Sampling distribution of the mean
+
+=== Inferential Statistics ===
+[[Inferential Statistics]]
+  * Estimation (point, interval)
+  * Hypothesis testing (H_0/H_A, Type I/II errors, z-test, t-test, p value)
+  * Statistical significance vs clinical significance
+  * One sample hypothesis testing
+
+=== Hypothesis Testing ===
+[[Hypothesis Testing]]
+  * Diff between
+    * two related means
+    * two independent population means
+  * Testing for proportions
+  * chi-square test of independence, Yates & Fisher's tests
+  * Testing diff between more than two population means (one-way ANOVA, post-hoc tests)
+
+=== Correlation ===
+[[Correlation]]
+  * Simple linear regression
+
+=== Analysis of Frequency Data ===
+[[Analysis of Frequency Data]]
+  * Non parametric tests
+  * Mann-Whitney U test/Wilcoxon Rank Sum
+  * Wilcoxon Signed-Rank test
+  * Kruskal-Wallis test
+ 
+=== Measures of Impact ===
+[[Measures of Impact]]
+  * Incidence, Prevalence
+  * Relative Risk
+  * Odds
+  * Number needed to treat
+
+
