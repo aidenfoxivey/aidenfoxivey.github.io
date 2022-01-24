@@ -1,18 +1,44 @@
-= Two Mains Kinds of Events = 
+= Probability, what is it? =
+Probability is the study of uncertainly when it comes to events occurring. Probability measures the chance of some event occurring during a trial, which is the context in which it happens.
+
+We often quantify uncertainty to figure out what the probability space (a set of numbers and data points that define observations) ends up looking like. This allows us to get to the idea of a **random variable**, which can give us a sense of what is likely to expect for any given trial.
+
+(*This could be really confusing!!! Random Variable deserves its own section, and we'll talk about it when reasonable.*)
+The random variable is a function associated with it that we would call a probability distribution, which compares outcomes to their likelihood of occurring.
+
+Statistics allows us to have a field separate from classical logic, in which every interaction is modelled as true or false and directly influences the outcome of another. It is used to model processes without directly understanding and/or monitoring every minute feature.
+
+Probability **is always measured as a number between 0 and 1**. You can imagine it as percentage reduced to a decimal. 65% probability of something occurring is denoted a 0.65.
+
+== Two Main Kinds of Events ==
 
 Mutually Exclusive::
 :: Both cannot happen. Either one can happen or the other can happen.
 :: Ex.: _You can have your cake or eat it._
 
+
+
 Conditionally Independent::
 :: The outcome of one of the events depends on the other.
 :: Ex.: _You can only go to the movies if you do your homework._
 
-= Some math to go along with it = 
+== Some math to go along with it ==
 
-Both of the kinds of events have a law that goes along with them.  
+Both of the kinds of events have a law that goes along with them.
 
 === Mutually Exclusive ===
 
+$ P(A) = 45 $
 
-=== Conditionally Independent === 
+=== Conditionally Independent ===
+
+=== Notes you probably don't need ===
+
+$ \Omega $ (sample space) is the set of all possible outcomes of the experiment.
+
+$ \MathCal{A} $ (event space) is the set of all potential results from the experiment.
+
+Note that the event space for flipping a coin is heads or tails, but the sample space depends on how many trials.
+As a result, the event space can be found as a subset of the sample space.
+
+$ \Italic{P} $ (probability) is the likelihood of the event occurring.

@@ -1,0 +1,6 @@
+== Skewness ==
+Skewness refers to the degree of distortion from the symmetrical bell curve or the normal distribution.
+
+A symmetrical distribution should have a skewness of 0, considering it is symmetrical.
+
+$\frac{A}{B}$

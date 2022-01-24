@@ -6,15 +6,18 @@ All chapters are in reference to _Biostatistics: The Bare Essentials_.
   2. Descriptive Statistics (Ch. 3,5)
   3. Probability (Ch. 4)
   4. Inferential Statistics (Ch. 6)
-  5. Hypothesis Testing (Ch. 7,8,10,21 + Pg. 263) 
+  5. Hypothesis Testing (Ch. 7,8,10,21 + Pg. 263)
   6. Correlation  (Ch. 13)
   7. Analysis of Frequency Data (Ch. 23)
   8. Non-parametric tests
   9. Measure of Impact (Ch. 26)
 
+== Session Notes ==
+[[January 24, 2022]]
+
 == Specifics within Topics ==
 
-=== Graphing === 
+=== Graphing ===
 [[Graphing]]
   * Measurement and measurement scales.
   * Box and whisker charts
@@ -60,7 +63,7 @@ All chapters are in reference to _Biostatistics: The Bare Essentials_.
   * Mann-Whitney U test/Wilcoxon Rank Sum
   * Wilcoxon Signed-Rank test
   * Kruskal-Wallis test
- 
+
 === Measures of Impact ===
 [[Measures of Impact]]
   * Incidence, Prevalence
