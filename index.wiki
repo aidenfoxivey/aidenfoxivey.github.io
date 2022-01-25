@@ -14,6 +14,7 @@ All chapters are in reference to _Biostatistics: The Bare Essentials_.
 
 == Session Notes ==
 [[January 24, 2022]]
+[[January 25, 2022]]
 
 == Specifics within Topics ==
 

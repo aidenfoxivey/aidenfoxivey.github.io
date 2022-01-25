@@ -1,0 +1,11 @@
+= January 25, 2022 =
+
+== Topics ==
+- Union and Intersection operators
+- Set theory and notation
+- Permutations
+- Logic diagrams (Venn), and Euler diagrams
+
+== Homework Links ==
+-   Chapter two again is super useful
+    [[https://math.buet.ac.bd/public/faculty_profile/files/835598806.pdf]]
