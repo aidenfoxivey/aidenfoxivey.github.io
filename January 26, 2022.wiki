@@ -1,0 +1,16 @@
+= January 26, 2022 =
+
+== Topics ==
+- discrete versus continuous probability distributions
+- percentiles, range, and quartiles
+- standard deviation questions
+- z score
+- normal distribution
+
+== Homework Links ==
+-   Have a look at page 17 (1.5 discrete and continuous data)
+    [[https://math.buet.ac.bd/public/faculty_profile/files/835598806.pdf]]
+
+-   Visualizing quartiles
+    [[https://thestatsninja.com/tag/quartiles/]]
+    [[https://towardsdatascience.com/statistics-02-measuring-and-visualizing-the-spread-of-data-2fc31d928830]]

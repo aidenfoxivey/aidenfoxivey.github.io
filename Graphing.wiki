@@ -1,3 +1,5 @@
-Box and Whisker Chart
+this is currently being left for more important things to finish
 
-Histogram
+=== Box and Whisker Chart ===
+A box and plot diagram essentially shows the upper range
+

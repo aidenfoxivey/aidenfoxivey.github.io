@@ -10,9 +10,117 @@
 <body>
 	<div class="content">
 	
-<div id="Skewness"><h2 id="Skewness" class="header"><a href="#Skewness">Skewness</a></h2></div>
+<div id="Median, Mean, and Mode"><h2 id="Median, Mean, and Mode" class="header"><a href="#Median, Mean, and Mode">Median, Mean, and Mode</a></h2></div>
+
 <p>
-Skewness refers to the degree of distortion from the symmetrical bell curve or the normal distribution.
+The <span id="Median, Mean, and Mode-mode"></span><strong id="mode">mode</strong> of a dataset is the data point that appears most often within the dataset. Essentially, it is the value that is most
+likely to be sampled. In a normal distribution (which you might see as a bell curve), the mode is commonly very close to the median and mean, but it can be further depending on skew.
+</p>
+
+<p>
+One thing to remember about the mode is that there can be more than one. If, for example, you have the set {1,1,2,3,7,7}, then the
+mode is both 1 and 7. This set would then be called a bimodal data set. If there are more modes, then the dataset is simply called
+multimodal.
+</p>
+
+<p>
+Now, one thing to remember is that while this holds up nicely for a discrete dataset, a continuous distribution cannot directly
+use mode. This is because every item in a continuous dataset is a unique value. Therefore, you can only use the mode after you
+discretize the data into a set of intervals.
+</p>
+
+<p>
+The <span id="Median, Mean, and Mode-median"></span><strong id="median">median</strong> of a dataset is the value perfectly in the middle of the whole dataset. It represents the 50th percentile, and can be
+used to make finding the other quartiles more easy.
+</p>
+
+<p>
+Given a dataset, count the number of items within that set. If that number is odd, then the median will just be the value in the middle of the set. (Remember to sort it first. :) ) If it's even, then the median will be the average of both of the middle values.
+</p>
+
+<p>
+The median is the value separating the higher half from the lower half in a sample. That ties into the idea of quartiles that we'll discuss next.
+</p>
+
+<p>
+The <span id="Median, Mean, and Mode-mean"></span><strong id="mean">mean</strong>, commonly referred to as the <em>arithmetic mean</em> for a dataset is the central value of a finite set of numbers. In order
+to find it, you must take all the data points, add them together, and then divide by the number of data point. We commonly denote
+the arithmetic mean (sample mean in this case rather than the expected value) as an x with a bar on top.
+</p>
+
+<p>
+\( \bar{x} = \frac{\text{All of the data added up.}}{\text{The number of pieces of data.}} \)
+</p>
+
+<div id="Quartiles"><h2 id="Quartiles" class="header"><a href="#Quartiles">Quartiles</a></h2></div>
+
+<p>
+A <span id="Quartiles-quartile"></span><strong id="quartile">quartile</strong> is point that cuts a distribution into sections. Commonly, you can think about there as being 3 quartiles in a dataset.  The first quartile is the data point that divides the bottom 25% from the top 75%, the second (also called the median) divides it equally in half, and the third quartile divides the bottom 75% from the top 25%.
+</p>
+
+<p>
+Each of the different quartiles are denoted as Q1, Q2 (which is the median of the dataset), and Q3. The difference between Q3 and Q1 (Q3-Q1) is referred to as the interquartile range, which will be covered subsequently.
+</p>
+
+<p>
+How do I find the first and third quartiles? Since we've already covered finding the median, we'll just have a look at Q1 and Q3.
+</p>
+
+<p>
+We'll cover finding both for discrete probability distributions, as this is likely the most useful thing to know presently. Keep in mind that there are other ways, so this doesn't have to be the way that you opt to do it. There also is no universal way to find it,
+so we'll be relying on the content shown in <em>Biostatistics.</em>
+</p>
+
+<p>
+As covered there, the lower quartile (Q1) can be found by finding the median on the range of the first 50% of the data. The upper quartile (Q3) can be found through the same method. Pay attention to the fact that the quartiles do not necessarily have to be part of the dataset.
+</p>
+
+<p>
+Let's say that there is an odd number of data points, then that implies that the median <span id="Quartiles-is"></span><strong id="is">is</strong> part of the data set, but Q1 and Q3 might not be. You might at this point be thinking: "<em>Why, what are you basing that on?</em>" Let's see why...
+</p>
+
+<p>
+Let A = {1,2,3,6,8,13,18}
+</p>
+
+<p>
+The length of A is 7 data points. Feel free to count that out if you would like.
+</p>
+
+<p>
+In this case, 6 is the median, or Q2. 50% of the data ({1,2,3}) lies below and the other 50% of
+the data ({8,13,18}) is above.
+</p>
+
+<p>
+Q1 is 2 and Q3 is 13. Okay, so that proves that all of the quartiles are in the dataset, but now consider a dataset with nine pieces.
+</p>
+
+<p>
+Let B = {2, 3, 4, 5, 6, 7, 8, 11, 13}
+</p>
+
+<p>
+6 is the median, but that leaves us with finding the median of {2, 3, 4, 5} and of {7, 8, 11, 13} in order to find Q1 and Q3. The quartiles would be 3.5 and 9.5 respectively, which do not appear in the dataset. Take a moment to verify that this makes sense to you. You should be able to calculate this by yourself.
+</p>
+
+<div id="Finding an arbitrary quartile."><h2 id="Finding an arbitrary quartile." class="header"><a href="#Finding an arbitrary quartile.">Finding an arbitrary quartile.</a></h2></div>
+
+<div id="Measures of Dispersion"><h2 id="Measures of Dispersion" class="header"><a href="#Measures of Dispersion">Measures of Dispersion</a></h2></div>
+
+<p>
+A <span id="Measures of Dispersion-measure of dispersion"></span><strong id="measure of dispersion">measure of dispersion</strong> refers to how closely the data clusters around the measure of cnetral tendency. The range, index of dispersion, interquartile range, mean deviation, standard deviation, and the coefficient of variation are all measures of dispersion.
+</p>
+
+<p>
+We'll get into those now. Remember that not all of these may be necessary to remember.
+</p>
+
+
+<div id="Skewness and Kurtosis"><h2 id="Skewness and Kurtosis" class="header"><a href="#Skewness and Kurtosis">Skewness and Kurtosis</a></h2></div>
+<p>
+Skewness refers to the degree of distortion from the symmetrical bell curve, which would be the normal distribution.
+A curve is left skewed if the longer tail is on the left side and right skewed if the longer tail is on the right side.
 </p>
 
 <p>
@@ -20,8 +128,34 @@ A symmetrical distribution should have a skewness of 0, considering it is symmet
 </p>
 
 <p>
-\(\frac{A}{B}\)
+<span id="Skewness and Kurtosis-Skews"></span><strong id="Skews">Skews</strong> can be thought of as positive if right skewed, and negative if left skewed.
 </p>
+<table>
+<tr>
+<td>
+Skew
+</td>
+<td>
++/-
+</td>
+</tr>
+<tr>
+<td>
+left
+</td>
+<td>
+-
+</td>
+</tr>
+<tr>
+<td>
+right
+</td>
+<td>
++
+</td>
+</tr>
+</table>
 
 	</div>
     <center><p><small>Aiden Fox-Ivey | Feel free to reuse -> <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></small></p></center>
