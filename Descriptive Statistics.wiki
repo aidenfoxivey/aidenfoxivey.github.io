@@ -72,3 +72,9 @@ A symmetrical distribution should have a skewness of 0, considering it is symmet
 | Skew  | +/- |
 | left  | -   |
 | right | +   |
+
+== Variance ==
+
+Variance is a measure of the spread between numbers in a data set. It specifically measures how far each number in the set is from the mean or average. 
+
+Variance measures the variabilty from the average, which is essentially how far given numbers "diverge" or exist from the average value. 
