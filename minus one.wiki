@@ -1,0 +1,10 @@
+== A quick explanation on n-1 ==
+
+If you were to pick random samples from a data set, you are more likely to pick the mode of the dataset, as it is the most common 
+item in the data set. Following from this, the median and mean are often close by, so the standard deviation (the marker of how far
+most of the data points (datum, as we call it in the business) are from the measures of center tendency) will typically tend to be a bit
+smaller than it should actually be.
+
+To fight this, we divide by n-1 rather than N so that we can have a larger number.
+
+Remember that it we divide 5 by 6, that it larger than if we divide it by 82.

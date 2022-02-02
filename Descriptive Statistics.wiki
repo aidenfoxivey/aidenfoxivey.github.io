@@ -60,6 +60,38 @@ A *measure of dispersion* refers to how closely the data clusters around the mea
 
 We'll get into those now. Remember that not all of these may be necessary to remember.
 
+== Calculating Standard Deviation ==
+
+=== If the data set is a sample of the population. ===
+
+Steps:
+
+1. Calculate the mean of the dataset. (I will assume that this is easy enough to do.)
+2. Keep the number of elements, you will need it for later.
+3. Take each datapoint and subtract the mean from it. 
+4. Take each of the answers from the previous step and square them. (multiply by themselves
+5. Add up all the answers you just squared.
+6. Divide this sum of all the numbers by the number of elements *minus one*, which you had in step 2.
+7. Take the square root of this number.
+
+Now you have the Standard Deviation. If you want the Variance, take this number and square it.
+
+If the reasoning why you're subtracting one for a sample of the population does not make sense, 
+follow this link to the explanation on [[minus one]].
+
+=== If the data set is the entire population. ===
+
+Steps:
+
+1. Calculate the mean of the dataset. (I will assume that this is easy enough to do.)
+2. Keep the number of elements, you will need it for later.
+3. Take each datapoint and subtract the mean from it. 
+4. Take each of the answers from the previous step and square them. (multiply by themselves
+5. Add up all the answers you just squared.
+6. Divide this sum of all the numbers by the number of elements, which you had in step 2.
+7. Take the square root of this number.
+
+Now you have the Standard Deviation. If you want the Variance, take this number and square it.
 
 == Skewness and Kurtosis ==
 Skewness refers to the degree of distortion from the symmetrical bell curve, which would be the normal distribution.
@@ -79,4 +111,3 @@ Variance is a measure of the spread between numbers in a data set. It specifical
 
 Variance measures the variabilty from the average, which is essentially how far given numbers "diverge" or exist from the average value. 
 
-In order to calculate the variance, one must take the square of the SD or simply take the square of the difference between the mean and the average for each different data point.
