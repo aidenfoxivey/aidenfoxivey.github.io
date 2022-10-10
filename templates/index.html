@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="title">
+  Aiden Fox Ivey
+</h1>
+
+<p>
+  Welcome to my dusty corner of the internet. I have a selection
+  of writings under "Posts." Everything else should be fairly self
+  explanatory. </p>
+<p></p>
+  If you want to contact me, send me an email at:
+  abfoxivey [at] uwaterloo [dot] ca
+</p>
+
+<ul>
+  <li> <a href="{{ get_url(path="@/blog/_index.md") }}">Posts</a>     </li>
+  <li> <a href="/resume.pdf">Resume</a></li>
+  <li> <a href="https://git.sr.ht/~aidenfoxivey">sourcehut</a>        </li>
+  <li> <a href="https://github.com/aidenfoxivey">GitHub</a>           </li>
+  <li> <a href="https://huggingface.co/aidenfoxivey">Hugging Face</a> </li>
+</ul>
+
+<p>
+  This is a proudly javascript free blog.
+  There is no practical reason to include javascript, so I've
+  chosen to explicitly exclude it.
+</p>
+{% endblock content %}

@@ -1,0 +1,18 @@
+image: alpine/edge
+packages:
+  - hut
+  - zola
+oauth: pages.sr.ht/PAGES:RW
+environment:
+  site: aidenfoxivey.com
+sources:
+  - https://git.sr.ht/~aidenfoxivey/home
+tasks:
+  - build: |
+      cd home
+      zola build
+  - package: |
+      cd home
+      tar -C public -cvz . > ../site.tar.gz
+  - upload: |
+      hut pages publish -d $site site.tar.gz
