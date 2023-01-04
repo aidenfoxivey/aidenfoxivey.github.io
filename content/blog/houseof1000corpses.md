@@ -1,6 +1,7 @@
 +++
 title = "Review: House of 1000 Corpses"
 date = 2022-10-23
+draft = true
 +++
 
 I gave House of 1000 Corpses a watch last night as part of my weekly movie
