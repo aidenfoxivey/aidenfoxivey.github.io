@@ -2,6 +2,7 @@ image: alpine/edge
 packages:
   - hut
   - zola
+  - texlive
 oauth: pages.sr.ht/PAGES:RW
 environment:
   site: aidenfoxivey.com
