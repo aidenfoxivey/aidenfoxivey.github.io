@@ -3,46 +3,57 @@
 {% block content %}
 
 
-<h1 class="title">
-  Aiden Fox Ivey
-</h1>
+    <h1 class="title">
+        Aiden Fox Ivey
+    </h1>
 
-<ul>
-  <li> <a href="{{ get_url(path=" @/blog/_index.md") }}">posts</a> </li>
-  <li> <a href="/resume.pdf" type="application/pdf">resume</a></li>
-  <li> <a href="https://git.sr.ht/~aidenfoxivey">sourcehut</a> </li>
-  <li> <a href="https://github.com/aidenfoxivey">github</a> </li>
-  <li> <a href="https://huggingface.co/aidenfoxivey">hugging face</a> </li>
-</ul>
-<div>
-  <p>
-    Welcome to my dusty corner of the internet. I have a selection
-    of writings under "posts." Everything else should be fairly self
-    explanatory.
-
-    FYI, I'm not currently using Github for most of my projects. You should
-    go on SourceHut to see the latest things. As well, the HuggingFace link is
-    there for future use. I have nothing on there because I haven't really messed
-    around with serious machine learning in my spare time yet. I'm still trying
-    to Grok some of the fundamentals, so I think it would be naive at best to post
-    those on the link.
-  </p>
-  <aside>
-    Please note that if you're on Safari, the "resume" link above may not
-    actually render the PDF in browser. In that case, hit Cmd+s to save
-    the file to view it locally. I'm currently in the process of trying
-    to resolve the issue.
-  </aside>
-  <p>
-    If you want to contact me, send me an email at:
-  </p>
-  <h2>
-    abfoxivey[at]uwaterloo[dot]ca
-  </h2>
-  <p>
-    I am more than happy to chat. Please do not abuse this. The University
-    of Waterloo spam filters are capable, but in general it would be more
-    polite to not bother sending spam in the first place.
-  </p>
-</div>
+    <ul>
+        <li>
+            <a href="{{ get_url(path="@/blog/_index.md" ) }}">posts</a>
+        </li>
+        <li>
+            <a href="/resume.pdf" type="application/pdf">resume</a>
+        </li>
+        <li>
+            <a href="https://git.sr.ht/~aidenfoxivey">sourcehut</a>
+        </li>
+        <li>
+            <a href="https://github.com/aidenfoxivey">github</a>
+        </li>
+        <li>
+            <a href="https://huggingface.co/aidenfoxivey">hugging face</a>
+        </li>
+    </ul>
+    <div>
+        <p>
+            Welcome to my dusty corner of the internet. I have a selection
+                of writings under "posts." Everything else should be fairly self
+                explanatory.
+        </p>
+        <p>
+            FYI, I'm not currently using Github for most of my projects. You should
+                go on SourceHut to see the latest things. As well, the HuggingFace link is
+                there for future use. I have nothing on there because I haven't really messed
+                around with serious machine learning in my spare time yet. I'm still trying
+                to Grok some of the fundamentals, so I think it would be naive at best to post
+                those on the link.
+        </p>
+        <aside>
+            Please note that if you're on Safari, the "resume" link above may not
+                actually render the PDF in browser. In that case, hit Cmd+s to save
+                the file to view it locally. I'm currently in the process of trying
+                to resolve the issue.
+        </aside>
+        <p>
+            If you want to contact me, send me an email at:
+        </p>
+        <h2>
+            abfoxivey[at]uwaterloo[dot]ca
+        </h2>
+        <p>
+            I am more than happy to chat. Please do not abuse this. The University
+                of Waterloo spam filters are capable, but in general it would be more
+                polite to not bother sending spam in the first place.
+        </p>
+    </div>
 {% endblock content %}
