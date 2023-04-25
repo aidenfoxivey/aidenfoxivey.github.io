@@ -1,67 +1,12 @@
+@viewport {
+  width: device-width ;
+  zoom: 1.0 ;
+}
+
 html {
     font-family: sans-serif;
-    line-height: 1.15;
-    -webkit-text-size-adjust: 100%;
-    max-width: 38em;
+    width: 60%;
     margin: auto;
-    padding: 13px;
-    background-color: rgb(40, 30, 99);
-    /* background-color: rgb(177, 14, 14); */
-    color: white;
-}
-
-h1 {
-    color: rgb(255, 255, 255);
-    text-align: center;
-    font-size: 2.5em;
-    /* text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; */
-    text-shadow: 5px 2px 2px black, 0 0 2px rgb(0, 0, 0), 0 0 5px rgb(0, 0, 0);
-
-}
-
-h2 {
-    font-size: 1em;
-    text-align: center;
-}
-
-div {
-    /* overflow: hidden; */
-    /* background-color: rgb(116, 116, 116); */
-    /* border-style: ridge; */
-    /* border-width: 6px; */
-    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
-    margin: auto;
-}
-
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: rgb(116, 116, 116);
-    border-style: ridge;
-    border-width: 6px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    margin: auto;
-}
-
-li {
-}
-
-li a {
-    display: block;
-    color: white;
-		text-decoration: none;
-
-    padding: 4px;
-}
-
-li a:hover {
-		text-decoration: underline;
-		border-style: none;
-}
-
-a {
-    color: white;
-    text-decoration: solid;
+    background-color: white;
+    color: black;
 }
