@@ -22,8 +22,7 @@ Compiler. My plan so far for my time at the Recurse Center is to write a
 compiler of my own, possibly using Scheme 5 (do people call it that?) as a
 target. 
 
-Also, I started [a chain on Mastodon]
-(https://mastodon.social/@aidenfoxivey/110243666746755004) asking Matt Godbolt
+Also, I started [a chain on Mastodon](https://mastodon.social/@aidenfoxivey/110243666746755004) asking Matt Godbolt
 for books on compilers and interpreter design. It has some good picks out of it.
 I'll summarize them below for posterity!
 
