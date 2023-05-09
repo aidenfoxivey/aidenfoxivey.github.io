@@ -2,15 +2,16 @@
 
 {% block content %}
 <h1 class="title">
+<center>
   {{ section.title }}
+</center>
 </h1>
   <i><a href="/">go back</a></i>
-  <p>At some point, you can expect to have these in itemized categories.</p>
-  <p>Right now, I don't have a volume of posts that necessitates it.</p>
+  <p>Gaze upon my prose and weep. Not because it's beautiful, but because you're sad you spent time reading it.</p>
 <ul>
   <!-- If you are using pagination, section.pages will be empty. You need to use the paginator object -->  
   {% for page in section.pages %}
-  <li><a href="{{ page.permalink | safe }}">{{ page.title }} --- {{ page.date }}</a></li>
+  <li><a href="{{ page.permalink | safe }}">{{ page.title }} ({{ page.date }})</a></li>
   {% endfor %}
 </ul>
 {% endblock content %}
