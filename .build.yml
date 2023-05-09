@@ -14,10 +14,10 @@ tasks:
   - build: |
       cd home
       zola build
-  - resume: |
-      cd resume
-      xelatex -interaction=nonstopmode cv.tex
-      mv cv.pdf ../home/public/resume.pdf
+  # - resume: |
+  #     cd resume
+  #     xelatex -interaction=nonstopmode cv.tex
+  #     mv cv.pdf ../home/public/resume.pdf
   - package: |
       cd home
       tar -C public -cvz . > ../site.tar.gz
