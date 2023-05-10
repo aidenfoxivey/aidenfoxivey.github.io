@@ -2,22 +2,15 @@ image: alpine/edge
 packages:
   - hut
   - zola
-  - texlive-full
-  - texlive-xetex
 oauth: pages.sr.ht/PAGES:RW
 environment:
   site: aidenfoxivey.com
 sources:
   - https://git.sr.ht/~aidenfoxivey/home
-  - https://git.sr.ht/~aidenfoxivey/resume
 tasks:
   - build: |
       cd home
       zola build
-  # - resume: |
-  #     cd resume
-  #     xelatex -interaction=nonstopmode cv.tex
-  #     mv cv.pdf ../home/public/resume.pdf
   - package: |
       cd home
       tar -C public -cvz . > ../site.tar.gz

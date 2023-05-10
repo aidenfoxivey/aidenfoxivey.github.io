@@ -1,24 +1,23 @@
 +++
-title = "Is the person who drive a train an engineer?"
-date = 2023-05-08
-draft = true
+title = "Is the person who drives a train an engineer?"
+date = 2023-05-09
+draft = false
 +++
-
-# Is the person who drives a train an engineer?
 
 > Disclaimer 1:
 > This post does not encourage, promote, or seek to normalize the act of using
 > any protected titles illegally in any province, state, territory, or other country.
 > It is simply supposed to provide my thoughts on the the ethics and uses of
 > doing so. Regardless of whether something may be found as ethical or not,
-> the written law is still applicable.
+> the written law is still applicable. I have delivered an opinion but I do not endorse
+> it aside from as a pure idea.
 
 > Disclaimer 2:
 > I am not a lawyer and nothing in this post constitutes legal advice. I'm not 
 > sure why you would consider me a lawyer, but unfortunately I am not.
 
-A few days ago I had a discussion about the ethics and reasons for why an undergraduate
-student in engineering might choose to illegally (in Ontario) use the
+A week ago I had a discussion about the ethics and reasons for why an undergraduate
+student in certain engineering programs might choose to illegally (in Ontario) use the
 title "Engineer", in the event that it was given to them by an employer
 during on of their co-ops. 
 
@@ -69,10 +68,10 @@ and disciplines that don't directly deal with something that's obviously tangibl
 to be considered perhaps "not engineering", but I see it as having a pretty sizeable 
 impact on humanity. 
 
-I think the reason we classically consider civil engineering or environmental engineering
-as being professional engineering comes down to the fact that the largest clients
-for both are, in some structure, either the government itself, or companies under
-very strong supervision by the government.
+I think the reason we classically consider civil engineering or environmental
+engineering as being professional engineering comes down to the fact that the
+largest clients for both are, in some structure, either the government
+itself, or companies under very strong supervision by the government.
 
 ## Why are we so fussy about engineering being accredited?
 
@@ -90,11 +89,32 @@ offer too much comment about the specifics of collapse, but the liability issue
 comes down to the fact that calculations done by the initial engineering team weren't
 checked during construction and were only valid for a smaller dead load.
 
-The result of this was that a Royal Commission by the federal government that found 
+The result of this was that a [Royal Commission by the federal government][5] that found 
 that two engineers, Theodore Cooper and Peter L. Szlapka, were those guilty of 
 the bridge failure. From what is understood, neither of them faced any penalties.
 
-!!!!!!!!!!!!!!! include the precise words from the royal commission
+> Your commisioners find:
+> 
+> (a) The collapse of the Quebec bridge resulted from the faiure of the lower
+> chords in the anchor arm near the main pier. The failure of these chords was 
+> due to their defective design.
+>
+> (b) The stresses that caused the failure were not due to abnormal weather
+> conditions or accident, but were such as might be expected in the regular
+> course of erection.
+>
+> (c) The design of the chords that failed was made by Mr. P. L. Szlapka, the
+>  designing engineer of the Phoenix Bridge Company.
+>
+> (d) The design was examined and officially approved by Mr. Theodore Cooper,
+> consulting engineer of the Quebec Bridge and Railway Company.
+>
+> (e) The failure cannot be attributed directly to any cuase other than errors
+> in judgement on the part of these two engineers.
+
+There is more on file, but this is really all the essentially information found inside
+the conclusions to the Royal Commission. In essence, it marked a moment where the oversight
+of engineers lacked 
 
 We can conclude that it is important to actually have a licensing mechanism for 
 engineers and ensure that we treat it as a generally licensed profession. Now, abstractly
@@ -105,15 +125,16 @@ be important for those working at large hedge funds, banks, and other financial
 organizations to take an oath to avoid causing harm as a result of their decisions.
 
 We know this is not the case at all. Now, you can argue with me on this point, but 
-the actions taken by those at !!!!! mention investment bankers that lead up to the 
+the actions taken by those at [Lehman Brothers][6] that lead up to the 
 2008 financial crash, were most certainly not ones that were directly aiming for a 
 general wellbeing of people.
 
-It's also clear that accredited people can and have been inept at their job
-!!! include this
+It's also clear that accredited people can and have been inept at their job. Medical
+doctors go through an unpleasant amount of schooling and accreditation, all for some
+of them to end up with malpractice charges.
 
 In a general case, we can agree that accreditation and making ethical oaths is a 
-generally good thing for public wellbeing.
+generally good thing for public wellbeing, but it isn't a silver bullet.
 
 ## On the importance of words
 
@@ -137,29 +158,73 @@ None of these positions require you to be a Professional Engineer. Perhaps there
 some benefits for being a combat engineer in terms of CAF payscale, but it is 
 not a requirement of the position to be formally a professional engineer.
 
-## Enter the gauntlet
+## The core argument
 
+I don't see it reasonable to try to argue that really any sort of engineering student 
+is incapable of doing immense hard. Even a software engineer is capable of immense 
+evil through rootkits, spyware, and malicious code. Frankly, SWE jobs probably do
+cause the most damage to broader society, seeing as though they're implementing things 
+that are used by a massive group of people.
 
+That said, it's worth understanding that tech generally doesn't have strong morals 
+and the requirement to actually follow ethical guidelines would likely not bode well
+for actually being able to be emplyoyed in the software engineering field in general.
+Tech already resists censorship and regulation in subtle ways, so creating a class 
+of people who are legally required to exercise professional judgement is fundamentally
+a poor idea from perspective of employment.
 
+Now, as for the actual situation, the number of people who graduated ECE in 2022 who are
+certain that they will pursue a P.Eng post graduation [are roughly 5% of respondents][7].
 
+It's not even particularly unreasonable given the job market widely having no interest 
+in software developers possessing a P.Eng. A simple search on LinkedIn, Indeed, or Google
+proves that there are copius amounts of "Software Engineer" jobs that require no
+engineering degree, much less an actual P.Eng. 
 
-Despite it not being accurate, the PEO is going to have to go through hundreds
-and hundreds of people who are employed in Canada in SWE and have no
-engineering degree at all - not even working towards one. I could see this
-being relevant in EE, but the average CE going for some less old fashioned
-company probably would be foolish to strike engineer from their title for
-fear of legal retaliation or representing themselves incorrectly. In my mind
-the usage of engineering for many tech companies is basically
-because “developer” sounds a bit lower stakes. Not that I necessarily
-recommend and endorse using engineer in that way, but this isn’t EE power
-engineering or CEE. For better or worse, the tech world is familiar with so
-much grifting that this is incredibly minor and arguably unnecessary. There’s
-virtually no legal oversight in SWE roles or big tech in general, unlike CEE
-or EE. Physical infrastructure has a much bigger level of oversight than
-software does.
+The truth of the matter is that it's perhaps not accurate to describe the average developer.
+Engineering is somewhat cheapened when used to describe the process of fumbling around
+with React to design a website. Arguably there's some necessity in engineering being 
+a precise and mathematical practice that requires understanding what happens at many
+different levels. Consider the civil engineer - they need to understand materials 
+chemistry to really be able to make some comment on the state of a structure. The average 
+"software engineer" is, in reality, not concerned with actual implementation as much as
+having something that works. At risk of sounding like a delusional person, consider that 
+simple applications like Visual Studio Code, Slack, or Spotify are so abstracted from the
+hardware that they run inside the Chromium browser but packaged as their own app.
 
+In my mind, this is something that we cannot *reasonably* call engineering. 
+
+Now, with all this thought out of the way, let's get down to the real core of the 
+situation. Regardless of what *is technically true*, the tech industry will happily
+gobble up delusional perspectives and proudly use them. Look at AR for example. Broadly speaking, AR is an extremely over-hyped part of technology. The idea of spending time and effort to build a system that views the world, does some computation, and then spits out and image on top of it is ridiculous!
+
+Would it be fun to have an AR world? Sure! Is it at all useful to the point where Google
+should have been willing to lose what some estimate was over 100 million dollars on? No!
+If you're finding yourself believing that it was a good use of development given the time, 
+consider all the other common issues with your devices. Would longer batteries have been 
+a better idea? Perhaps reducing the environmental cost of computation? 
+
+Big tech doesn't care about reality. Big tech is in it to win it - and sometimes that takes
+breaks in the truth to sound one way on the hopes that it will improve certain qualities. 
+I don't see this as fundamentally evil either! Google, Meta, and Apple are all motivated to
+try to deliver regular profits and the chance of a moonshot.
+
+So then, why should we opt to use something less fashionable like "programmer" or "software developer" when "software engineer" is an option? Companies are already willing
+to flout the law without (to my knowledge), almost any intervention by PEO.
+
+For those concerned that PEO is going to hunt you down, keep in mind that the majority of
+"software engineers" in Canada aren't even *working* towards an engineering degree. Most of
+them will have a degree that is ostensibly **not** engineering and yet they will label 
+themselves a software engineer on their resume.  There's a lot of cases for PEO to get 
+before they get around to you.
+
+After all, if you're used to the tech grift so far, then why be concerned about a little
+bit of beneficial diction?
 
 [1]: https://www.ontario.ca/laws/statute/90p28
 [2]: https://www.concernusa.org/story/okay-to-say-im-starving/
 [3]: https://forces.ca/en/career/engineer-officer/ 
 [4]: https://ottawacitizen.com/news/world/the-five-worst-bridge-collapses-in-canadian-history
+[5]: https://publications.gc.ca/collections/collection_2016/bcp-pco/Z1-1907-5-1-1-eng.pdf
+[6]: https://en.wikipedia.org/wiki/Lehman_Brothers
+[7]: https://ece2022profile.github.io/report.pdf
