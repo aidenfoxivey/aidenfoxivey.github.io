@@ -4,9 +4,7 @@ date = 2023-05-24
 draft = false
 +++
 
-# Day 13
-
-Hopefully not cursed. (Correction, this is like a transcript of my brain. Don't bother reading further.)
+## This is like a transcript of my brain. Don't bother reading further.
 
 Learned a bit about ELF binaries. They start with “magic numbers” which is basically a keyword for “numbers that represent a specific ASCII phrase”. In the case of ELF, it’s ?ELF, which is delightful.
 
@@ -88,38 +86,35 @@ https://im.salty.fish/index.php/archives/linux-networking-shallow-dive.html
 Svelte TS to JSDOC
 https://news.ycombinator.com/item?id=35892250
 
-_https://github.com/sveltejs/svelte/pull/8569__
-_
-_
-_
-_http://dbp-consulting.com/tutorials/debugging/linuxProgramStartup.html__
-_
-_
-_
-ELF graphic
-_https://imgur.com/a/JEObT__
-_
-_
-_
-_https://notes.andymatuschak.org/z6UZP7P4sRNgRKSvNj7tMV5uW6dDhwwbdZCy9?stackedNotes=z42J1vxsMjhkdbrqVfoqjiEesSzfaEqurBtoJ__
-_
-_https://andymatuschak.org/prompts/__
-_
-_
-_
+https://github.com/sveltejs/svelte/pull/8569
+
+
+
+http://dbp-consulting.com/tutorials/debugging/linuxProgramStartup.html
+
+
+
+LF graphic
+https://imgur.com/a/JEObT
+
+
+
+https://notes.andymatuschak.org/z6UZP7P4sRNgRKSvNj7tMV5uW6dDhwwbdZCy9?stackedNotes=z42J1vxsMjhkdbrqVfoqjiEesSzfaEqurBtoJ
+
+https://andymatuschak.org/prompts/
+
+
+
 Green threads
-_
-_
-_https://c9x.me/articles/gthreads/intro.html__
-_
-_
-_
+
+
+https://c9x.me/articles/gthreads/intro.html
+
+
+
 Working through course on computability
 
 https://busy-beavers.tigyog.app
 
-Wrote Notes with it
 
 Finished everyday data science
-
-What did I learn? Errr, well errrr

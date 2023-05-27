@@ -4,8 +4,6 @@ date = 2023-05-25
 draft = false
 +++
 
-# Day 14
-
 Hey there! I’ve been really bad with keeping up with this blog. Today was a day mostly for figuring out what I want to do, trimming down my work, and learning Haskell! I spent a decent amount of time going over the strange idiosyncrasies of Haskell and trying to internalize them. Perhaps the most confusing one for me is this one:
 
 ```haskell
