@@ -115,6 +115,7 @@ https://c9x.me/articles/gthreads/intro.html
 Working through course on computability
 
 https://busy-beavers.tigyog.app
+Ooh, yes I should work on that!
 
 
 Finished everyday data science
