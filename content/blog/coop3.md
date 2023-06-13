@@ -22,4 +22,6 @@ something that works and submitting it. This leads to school projects taking up
 far too much time for what is reasonable. While I write this, a project using
 tries is calling my name.
 
-I honestly don't have anything terribly cool to say. I just figured I'd write a little update with some information as to what I've been up to lately. Expect a blog post on compilers pretty soon.
+I honestly don't have anything terribly cool to say. I just figured I'd write
+a little update with some information as to what I've been up to lately.
+Expect a blog post on compilers pretty soon.

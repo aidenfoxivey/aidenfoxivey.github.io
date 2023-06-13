@@ -10,7 +10,7 @@ Today I started reading the Nim book. I think there's only one Nim book so far?
 
 I cleaned up my github a bunch and finally finished the post on engineering licensing.
 
-I think tomorrow I'm going to clean off my desk and see if I can make sure that I'm 
+I think tomorrow I'm going to clean off my desk and see if I can make sure that I'm
 focused enough to not try to do everything at the same time!
 
 We'll see whether my OpenWRT VM works properly tomorrow during our work session!

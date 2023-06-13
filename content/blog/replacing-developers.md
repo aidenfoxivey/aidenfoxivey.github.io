@@ -12,7 +12,7 @@ in. Its performance with the bar is impressive and that's probably not something
 that's going to regress.
 
 Naturally, people are back to the classic trend of freaking out when new things
-appear. They're kept at bay by the "safety measures"[^1] put in place by the
+appear. They're kept at bay by the "safety measures"\[^1\] put in place by the
 engineers working at OpenAI. I think this is probably for good reason. LLMs
 could make broad swaths of people less employable by outcompeting them. It takes
 less time to review something than it does to create something in the first
@@ -53,7 +53,7 @@ already do a tonne of metaprogramming. Introducing LLMs is like metaprogramming
 with a very inconsistent tool. Not to mention, this is something that will
 likely develop uses. Maybe small chunks of software can be developed and then
 integrated. If a software engineer doesn't have to worry about small pieces of
-an API[^2] and can focus at high level orchestration, then maybe that's a
+an API\[^2\] and can focus at high level orchestration, then maybe that's a
 decision that has some merit.
 
 I don't see us actually getting rid of programmers any time soon, but the idea
@@ -61,12 +61,10 @@ that programmers are "irreplaceable" if they keep doing *exactly* what they're
 doing now is a little silly. There aren't that many software engineers writing
 bytecode manually these days. :)
 
-
-[^1]: I have no idea what safety measures actually entails with these models. I
+\[^1\]: I have no idea what safety measures actually entails with these models. I
 would assume it's something *more* sophisticated than just matching for
 concepts, phrases, or words that lead to unfortunate conclusions, but I have no
 way (that I know of) to figure out what happens whenever I call the API.
 
-[^2]: Or better yet, can delegate an LLM that is trained on code effective for that purpose, then it can 
+\[^2\]: Or better yet, can delegate an LLM that is trained on code effective for that purpose, then it can
 effectively shield a high level implementer from having to worry about little things.
-

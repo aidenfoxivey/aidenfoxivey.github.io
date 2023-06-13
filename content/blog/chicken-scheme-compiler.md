@@ -9,42 +9,42 @@ draft = true
 Disclaimer: I'm extremely new to compilers and the construction of them. I may
 make many errors. I will note errata at the bottom of this page. Please don't
 rely on this as actual advice - this is made by someone who's never taken a
-course on compilers in their life before. You can reach me at `abfoxive at
-uwaterloo dot ca` with any mistakes you find. Thank you for your
+course on compilers in their life before. You can reach me at `abfoxive at uwaterloo dot ca` with any mistakes you find. Thank you for your
 understanding!
 
 I've been really busy working on exams so far, which has led me to not spent
 as much time as I would like to on this compiler project I'm working on.
 
-I decided the best step in building a compiler would be looking at an existing 
+I decided the best step in building a compiler would be looking at an existing
 one and seeing how it works. I've been mostly contemplating implementing
 a compiler for Scheme, seeing as though it's a simple but ultimately interesting language.
 
-CHICKEN Scheme is a compiler and interpreter bundle that's available for many
-different platforms. You can find it at <https://call-cc.org/>.
+[CHICKEN Scheme][3] is a compiler and interpreter bundle that's available for many
+different platforms.
 
 Now, the CHICKEN Scheme Compiler generates C which it then compiles to
 assembly. Technically, it's a transpiler, since it moves from one HLL
 (high level language) to another without actually touching the assembly
 generating part of a compiler.
 
-The compiler component (which moves from HLL to machine language) is just whatever the 
+The compiler component (which moves from HLL to machine language) is just whatever the
 default C compiler for the plaform that CSC is run on.
 
 ## The way a compiler normally works.
 
 A compiler, according to the definition found in *Crafting a Compiler* by
 Fischer et al. is a program that transforms a human oriented language to a
-computer-executable language. 
+computer-executable language.
 
 A compiler operates in stages:
-1. The scanner
-2. The parser
-3. Symbol table creation
-4. Semantic analysis
-5. Code generation
 
-I'll describe all of these steps below. 
+1. The scanner
+1. The parser
+1. Symbol table creation
+1. Semantic analysis
+1. Code generation
+
+I'll describe all of these steps below.
 
 ### Scanner
 
@@ -63,12 +63,12 @@ You may even think: jeez, there are even more characters on the ASCII table
 than I've seen in most computer writings! The reason is because everything
 inside ASCII is also inside UTF-8. We have the ability to render some special
 things with UTF-8, but we choose often to just use ASCII. This means that
-every character in the ASCII system can be represented within a byte. 
+every character in the ASCII system can be represented within a byte.
 
 So wait, my code is just numbers? Yes, yes exactly. Everything you use on a
 computer is just numbers. When you move from human code to computer code, you
 are still using numbers! Except, the computer works with more fine-grained
-code that you can't read as text. 
+code that you can't read as text.
 
 I promise I'll get to what a scanner actually is in a second, but first I need
 to linger a little bit longer on the idea of code being just a bunch of
@@ -81,11 +81,11 @@ each byte in the file as if it were text! But it's not. It's compiled
 computer code. If you instead use the command `objdump -D a.out`, you can see
 the disassembled code in a human readable form.
 
-A scanner basically just reads every character in and then translates them into 
-tokens, which are the basic units of every programming language. Let's use an 
+A scanner basically just reads every character in and then translates them into
+tokens, which are the basic units of every programming language. Let's use an
 example from C.
 
-```
+```c
 for (int i = 0; i < 5; i++) {}
 ```
 
@@ -93,7 +93,7 @@ In this snippet (which does nothing), `for` is a token. When we read it as a fil
 it's three different characters: `f`,  `o`, and `r`, but we want to turn it into a
 special object inside our code that recognizes it as a whole construct. This is
 because, in C at least, you can't use `for` to do anything other than be a for loop.
-It's a keyword in the C language. 
+It's a keyword in the C language.
 
 So in essence, that's what we're trying to do - trying to convert a series of characters
 into the objects they represent inside a programming language.
@@ -106,16 +106,17 @@ Now that we have a series of tokens, we need to check them to make sure they are
 for {} while ; int
 ```
 
-While all of these tokens are valid in C, they aren't actually a valid expression in C, notice that the `for` statement has no arguments for example. The parser's job is making sure that the collection of tokens is actually something that the language can express. This is important, because the parser generates something called an AST or abstract syntax tree. 
+While all of these tokens are valid in C, they aren't actually a valid expression in C, notice that the `for` statement has no arguments for example. The parser's job is making sure that the collection of tokens is actually something that the language can express. This is important, because the parser generates something called an AST or abstract syntax tree.
 
-An abstract syntax tree is sort of like PEMDAS (parentheses, exponents, mulitplication, divison, addition, subtract) but for code. 
+An abstract syntax tree is sort of like PEMDAS (parentheses, exponents, mulitplication, divison, addition, subtract) but for code.
 
 ### Symbol table creation
+
 ### Semantic analysis
 
 *Crafting a Compiler* puts this the best way I understand
-### Code generation
 
+### Code generation
 
 ## What's a transpiler then?
 
@@ -129,9 +130,9 @@ And the C code that's generated from it.
 
 I've annotated it with comments but the condensed thoughts will also be found below.
 
-The code includes the C header `chicken.h`. This contains all the concepts that C uses to map Scheme operation to C. 
+The code includes the C header `chicken.h`. This contains all the concepts that C uses to map Scheme operation to C.
 
-The actual sourcecode of the file is here <http://code.call-cc.org/cgi-bin/gitweb.cgi?p=chicken-core.git;a=blob;f=chicken.h;h=f5a103ee14314f7c679e01dd8e11c0404043791a;hb=HEAD> and the guide to using it is here <https://wiki.call-cc.org/notes-on-chicken.h#notes-on-chickenhfile>.
+The actual sourcecode of the file is [here][1] and the guide to using it is [here][2].
 
 ```c
 /* Generated from define.scm by the CHICKEN compiler
@@ -282,3 +283,7 @@ o|removed binding forms: 1
 /* end of file */
 
 ```
+
+[1]: http://code.call-cc.org/cgi-bin/gitweb.cgi?p=chicken-core.git;a=blob;f=chicken.h;h=f5a103ee14314f7c679e01dd8e11c0404043791a;hb=HEAD
+[2]: https://wiki.call-cc.org/notes-on-chicken.h#notes-on-chickenhfile
+[3]: https://call-cc.org/

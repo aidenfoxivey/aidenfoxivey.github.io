@@ -6,13 +6,16 @@ draft = false
 
 ## This is like a transcript of my brain. Don't bother reading further.
 
-Learned a bit about ELF binaries. They start with “magic numbers” which is basically a keyword for “numbers that represent a specific ASCII phrase”. In the case of ELF, it’s ?ELF, which is delightful.
+Learned a bit about ELF binaries. They start with “magic numbers” which is
+basically a keyword for “numbers that represent a specific ASCII phrase”. In
+the case of ELF, it’s ?ELF, which is delightful.
 
 Also, there are apparently a few components to binary formats.
+According to the wikipedia page, ELF has most support (with extensions) for
+modern features in binaries.
 
-According to the wikipedia page, ELF has most support (with extensions) for modern features in binaries.
-
-One thing I think it actually pretty interesting is the extension support for “fat binaries”. Basically they’re binaries that can include both
+One thing I think it actually pretty interesting is the extension support
+for “fat binaries”. Basically they’re binaries that can include both
 [https://en.wikipedia.org/wiki/Comparison_of_executable_file_formats](https://en.wikipedia.org/wiki/Comparison_of_executable_file_formats)
 
 https://jvns.ca/blog/2014/09/06/how-to-read-an-executable/
@@ -30,10 +33,7 @@ Are they cross compatible —> IE something can be used on an old linux kernel, 
 Do binary sizes change all that much between different ones.
 
 **Can I build a fat binary for linux and actually test it?**
-**
-**
-I’ve built a fat binary for MacOS, but it seems fairly trivial.**
-**
+I’ve built a fat binary for MacOS, but it seems fairly trivial.
 
 Julia Evans seems to recommend using `readelf`, which I can attest is kinda neat.
 
@@ -64,58 +64,47 @@ Stripped binary means that the debugging symbols are removed. Let’s try writin
 ```
 a.out: ELF 64-bit LSB pie executable, ARM aarch64, version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux-aarch64.so.1, BuildID[sha1]=dd8adc0cf634b8da2f80796e130d5ddf9e96482d, for GNU/Linux 3.7.0, with debug_info, not stripped
 ```
+
 ^^ what’s up here? This has debug_info but isn’t stripped.
 
 ```
 a.out: ELF 64-bit LSB pie executable, ARM aarch64, version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux-aarch64.so.1, BuildID[sha1]=9d8535319d6853275bd349c91d9bee622640ee09, for GNU/Linux 3.7.0, stripped
 ```
+
 Gcc -s main.c
 
 So what’s the difference between having debug_info and no debug_info and being not stripped regardless
-https://blogs.oracle.com/solaris/post/inside-elf-symbol-tables
+<https://blogs.oracle.com/solaris/post/inside-elf-symbol-tables>
 
 SYSV
-https://github.com/shinh/tel_ldr
+<https://github.com/shinh/tel_ldr>
 
 I started reading
-http://tom7.org/papers/epsilon.pdf
+<http://tom7.org/papers/epsilon.pdf>
 
 Linux networking
-https://im.salty.fish/index.php/archives/linux-networking-shallow-dive.html
+<https://im.salty.fish/index.php/archives/linux-networking-shallow-dive.html>
 
 Svelte TS to JSDOC
-https://news.ycombinator.com/item?id=35892250
+<https://news.ycombinator.com/item?id=35892250>
 
-https://github.com/sveltejs/svelte/pull/8569
+<https://github.com/sveltejs/svelte/pull/8569>
 
-
-
-http://dbp-consulting.com/tutorials/debugging/linuxProgramStartup.html
-
-
+<http://dbp-consulting.com/tutorials/debugging/linuxProgramStartup.html>
 
 LF graphic
-https://imgur.com/a/JEObT
+<https://imgur.com/a/JEObT
 
+<https://notes.andymatuschak.org/z6UZP7P4sRNgRKSvNj7tMV5uW6dDhwwbdZCy9?stackedNotes=z42J1vxsMjhkdbrqVfoqjiEesSzfaEqurBtoJ>
 
-
-https://notes.andymatuschak.org/z6UZP7P4sRNgRKSvNj7tMV5uW6dDhwwbdZCy9?stackedNotes=z42J1vxsMjhkdbrqVfoqjiEesSzfaEqurBtoJ
-
-https://andymatuschak.org/prompts/
-
-
+<https://andymatuschak.org/prompts/>
 
 Green threads
-
-
-https://c9x.me/articles/gthreads/intro.html
-
-
+<https://c9x.me/articles/gthreads/intro.html>
 
 Working through course on computability
 
-https://busy-beavers.tigyog.app
+<https://busy-beavers.tigyog.app>
 Ooh, yes I should work on that!
-
 
 Finished everyday data science

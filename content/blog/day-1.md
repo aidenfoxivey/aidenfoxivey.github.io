@@ -27,7 +27,7 @@ tree is supposed to work.
 
 Oh, one more thing, I have three new blog posts in the works. In order of
 release, they are about engineering licensing, memory managment in C and C++,
-and the Chicken Scheme Compiler. 
+and the Chicken Scheme Compiler.
 
 I may or may not have been silly and named my interpreter project after my
 friend. 💀

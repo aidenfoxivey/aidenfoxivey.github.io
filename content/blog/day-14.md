@@ -8,18 +8,18 @@ Hey there! I’ve been really bad with keeping up with this blog. Today was a da
 
 ```haskell
 [x+y | x <- [1,2], y <- [1,2]]
-``` 
+```
 
-This weirdly evaluates to [2,3,3,4] if I’m correct. I practiced German again today, which was nice, but I don’t really think I’ve figured out what I want to do with it long term.
+This weirdly evaluates to \[2,3,3,4\] if I’m correct. I practiced German again today, which was nice, but I don’t really think I’ve figured out what I want to do with it long term.
 
 Here’s a list of what I was up to:
 
-* Read the Haskell introduction.
+- Read the Haskell introduction.
 
-https://wiki.haskell.org/Introduction
+<https://wiki.haskell.org/Introduction>
 
-* Started going through “Learn You a Haskell For Great Good”
+- Started going through “Learn You a Haskell For Great Good”
 
-* “Learn Physics With Functional Programming” by Scott N. Walck
+- “Learn Physics With Functional Programming” by Scott N. Walck
 
 I’m pretty busy so don’t expect a blog post tomorrow. My apologies.

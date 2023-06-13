@@ -5,7 +5,7 @@ draft = false
 +++
 
 alright, well, no luck compiling the kernel. I got kind of bored of it and decided
-that I would spend some of my time doing "cryptopals", which I'm apparently not that 
+that I would spend some of my time doing "cryptopals", which I'm apparently not that
 good at. Tomorrow I want to work more on it and actually sit down to write more code.
 I think I might have a talk with RC?
 

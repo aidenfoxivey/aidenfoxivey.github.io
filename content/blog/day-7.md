@@ -12,7 +12,7 @@ I'm realizing quickly that I'm biting off much more than I can chew, so I think 
 
 Another thing that could help is having special settings for my brain to distinguish when I'm in work, RC, or home mode.
 
-I'm also thinking about leetcode, fast.ai, Andrew Ng, Crafting Interpreters, Nim data structures, reading "Attention is All You Need" (I did a quarter of that today) 
-and a few other things. 
+I'm also thinking about leetcode, fast.ai, Andrew Ng, Crafting Interpreters, Nim data structures, reading "Attention is All You Need" (I did a quarter of that today)
+and a few other things.
 
 My mind is a bit chaotic right now and I want it to settle down. Thanks for listening to my crappy little rant.

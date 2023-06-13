@@ -6,7 +6,7 @@ draft = false
 
 I kind of just went ahead and decided this is day 24. To be perfectly clear,
 I'm not actually sure it is day 24. I just made the arbitrary decision and
-went ahead with it. From what I can tell, it's probably > 20 and < 30, so
+went ahead with it. From what I can tell, it's probably > 20 and \< 30, so
 I've guessed 24 as a decent intermediate.
 
 Today I did more of the Busy Beaver’s course on TigYog, which has talked a bit
@@ -19,6 +19,6 @@ the difference between `cargo check` and `cargo clippy`, which is apparently
 a matter of strictness.
 
 Also, I arranged some coffee chats for tomorrow and picked up a switch for
-Cosine to use. 
+Cosine to use.
 
 Tomorrow I’m going to go into the office.
