@@ -1,6 +1,6 @@
 +++
 title = "Day 19"
-date = 2023-06-1
+date = 2023-06-01
 draft = false
 +++
 
