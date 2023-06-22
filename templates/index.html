@@ -3,30 +3,64 @@
 {% block content %}
 
 
-<h1 class="title"> Aiden Fox Ivey </h1>
+<h1> Aiden Fox Ivey </h1>
 
+<img src="images/portrait.jpg"></img>
+
+<h3>My work:</h3>
 <ul>
     <li><a href="{{ get_url(path="@/blog/_index.md") }}">blog posts</a></li>
-    <li><a href="/resume.pdf" type="pdf">resume</a></li>
+    <li><a rel="me" href="https://mastodon.social/@aidenfoxivey">mastodon</a></li>
+    <!-- <li><a href="resume.pdf" type="pdf">resume</a></li> -->
     <li><a href="https://git.sr.ht/~aidenfoxivey">sourcehut repositories</a></li>
     <li><a href="https://github.com/aidenfoxivey">github repositories</a></li>
-    <li><a href="https://huggingface.co/aidenfoxivey">hugging face</a></li>
-	<li><a rel="me" href="https://mastodon.social/@aidenfoxivey">mastodon</a></li>
+    <!-- <li><a href="https://huggingface.co/aidenfoxivey">hugging face</a></li> -->
 </ul>
 
-<div>
-    <p>I'm Aiden. Welcome to my dusty corner of the internet.</p> 
+<h3>Contact me:</h3>
+<ul>
+    <li><a href="https://t.me/aidenfoxivey">t.me/aidenfoxivey</a></li>
+    <li><a href="mailto:me@aidenfoxivey.com">me@aidenfoxivey.com</a></li>
+    <li><a href="mailto:abfoxive@uwaterloo.ca">abfoxive@uwaterloo.ca</a></li>
+</ul>
 
-    <p>At some point this summer I'll probably write a legitimate explanation of who I am. Hopefully?</p>
+<h3>Explanation:</h3>
+<div>
+    <p>
+    I'm Aiden. Welcome to my dusty corner of the internet.
+    </p> 
 
     <p>
-    I have a selection of writings under "posts." Everything else should be fairly self explanatory. If you want me to develop your
-    app, it had better be an app about 5-8 recipes for octopus.</p>
+    I personally find self-congratulatory or over editiorialized descriptions of 
+    developers on their personal websites to be outside of my tastes, so I will
+    keep this as genuine and communicative as I can.
+    </p>
 
-    <p>I try to use both Github and sourcehut, but sourcehut has most of the recent projects.</p>
+    <p>
+    I'm also working at <a href="https://cosinenetworks.ca">Cosine Networks</a>,
+    developing a Wireguard-guard based protocol with a goal of simplifying the 
+    way that we use the internet, while taking advantage of hardware integration
+    to speed up software-defined networking.
+    </p>
 
-    <p>If you want to contact me, send me an email at:</p>
-    <h3><a href="mailto:me@aidenfoxivey.com">me@aidenfoxivey.com</a></h3>
+    <p>
+    I currently go the <a href="https://uwaterloo.ca">University of Waterloo</a>
+    for a Computer Engineering undergraduate degree. Most of my coursework is 
+    focused towards things like low-level programming, circuits, and digital 
+    design so far.
+    </p>
+
+    <p>
+    I'm currently at the <a href="https://www.recurse.com">Recurse Center</a> 
+    (sorry, not centre - it's American) studying compilers and contributing to 
+    some open source projects like PyTorch and LLVM.
+    </p>
+
+    <p>
+    In my personal time, I love CrossFit (sorry I know it's cliché), cycling, 
+    bagpiping, and advocacy. 
+    </p>
 </div>
+
 
 {% endblock content %}
