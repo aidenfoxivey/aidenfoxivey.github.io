@@ -7,5 +7,4 @@ default_language = "en"
 highlight_code = true
 
 [extra]
-# Put all your custom variables here
-# generate_feed = true
+generate_feed = true
