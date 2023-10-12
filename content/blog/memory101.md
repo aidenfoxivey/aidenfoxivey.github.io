@@ -122,17 +122,17 @@ In C, we use a function called `malloc` to access memory on the heap.
 int main(void) {
 	int* array = (int*)malloc(5*sizeof(int));
 	array[0] = 0;
-  array[1] = 1;
-  array[2] = 2;
-  array[3] = 342;
-  array[4] = 23;
-  
-  for (int i = 0; i < 5; i++) {
-    printf("%d", array[i]);
-  }
-  
-  array[5] = 43; // this is a memory error!
-  
+	array[1] = 1;
+	array[2] = 2;
+	array[3] = 342;
+	array[4] = 23;
+
+	for (int i = 0; i < 5; i++) {
+		printf("%d", array[i]);
+	}
+
+	array[5] = 43; // this is a memory error!
+
 	return 0;
 }
 ```
