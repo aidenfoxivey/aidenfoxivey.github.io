@@ -1,7 +1,7 @@
 +++
 title = "Getting Started with Haskell on M1 Mac"
 date = 2023-06-12
-draft = false
+draft = true
 +++
 
 Getting Started with Haskell on M1 Mac
