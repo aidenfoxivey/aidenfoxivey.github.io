@@ -3,22 +3,28 @@
 
 <head>
   <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline' *.cloudfront.net *.recurse-scout.com; img-src 'self' data:;">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/base.css" type="text/css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.3/gh-fork-ribbon.min.css" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.3/gh-fork-ribbon.min.css" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
   <title>Aiden Fox Ivey</title>
 </head>
+
 <body>
-   <a class="github-fork-ribbon" href="https://git.sr.ht/~aidenfoxivey/home" data-ribbon="Fork me on Sourcehut" title="Fork me on Sourcehut">Fork me on Sourcehut</a>
+  <a class="github-fork-ribbon" href="https://git.sr.ht/~aidenfoxivey/home" data-ribbon="Fork me on Sourcehut"
+    title="Fork me on Sourcehut">Fork me on Sourcehut</a>
   <section class="section">
     <div class="container">
       {% block content %} {% endblock %}
     </div>
   </section>
 </body>
+
 </html>
