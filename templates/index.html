@@ -1,79 +1,88 @@
-{% extends "base.html" %}
+{% extends "base.html" %} {% block content %}
 
-{% block content %}
-
-
-<h1 class="title"> Aiden Fox Ivey </h1>
-<h5>Full Stack Developer, Head Imposter at the <a href="https://cavendishinstitute.neocities.org/">Cavendish Research
-        Institute</a></h5>
+<h1 class="title">
+  <strong>Aiden Fox Ivey</strong>
+  <br />
+  <p class="subtext">
+    Full Stack Developer, Head Imposter at the
+    <a href="https://cavendishinstitute.neocities.org/"
+      >Cavendish Research Institute</a
+    >
+  </p>
+</h1>
 
 <div class="portrait_container">
-    <video class="portrait" autoplay loop muted playsinline width="640"
-     height="640">
-        <source src="images/portrait.webm" type="video/webm" />
-        <source src="images/portrait.mp4" type="video/mp4" />
-        A video of me with a pixel effect on it.
-    </video>
+  <video
+    class="portrait"
+    autoplay
+    loop
+    muted
+    playsinline
+    width="640"
+    height="640"
+  >
+    <source src="images/portrait.webm" type="video/webm" />
+    <source src="images/portrait.mp4" type="video/mp4" />
+    A video of me with a pixel effect on it.
+  </video>
 </div>
 
 <h4 class="key">
-    <a href="aidenfoxivey.asc">61605C2245761FC2200F078684B78FF77616E348</a><br>
-    <a href="https://keyoxide.org/hkp/aiden@fox-ivey.com">https://keyoxide.org/hkp/aiden@fox-ivey.com</a>
+  <a href="aidenfoxivey.asc">61605C2245761FC2200F078684B78FF77616E348</a><br />
+  <a href="https://keyoxide.org/hkp/aiden@fox-ivey.com"
+    >https://keyoxide.org/hkp/aiden@fox-ivey.com</a
+  >
 </h4>
 
 <div>
-    <p>
-        I'm Aiden. I'm a developer and engineering student at the University of Waterloo.
-    </p>
-
-    <p>
-        I like working with a bunch of different languages, but OCaml and C are probably my
-        favourites at the moment.
-    </p>
-
-    <p>
-        I really like figuring out how things work and building them. This is something I
-        mostly do with code these days, but I've been known to work with hardware
-        when code doesn't need to be written.
-    </p>
-
-
+  <p>
+    I'm Aiden. I'm a developer and engineering student at the University of
+    Waterloo.
+  </p>
+  <p>
+    I like working with a bunch of different languages, but OCaml and C are
+    probably my favourites at the moment.
+  </p>
+  <p>
+    I really like figuring out how things work and building them. This is
+    something I mostly do with code these days, but I've been known to work with
+    hardware when code doesn't need to be written.
+  </p>
 </div>
 
 <h3>My work:</h3>
 <ul>
-    <li><a href="https://flowcv.com/resume/pdig8u9c7a">resume</a></li>
-    <li><a href="{{ get_url(path=" @/blog/_index.md") }}">blog posts</a></li>
-    <li><a rel="me" href="https://mastodon.social/@aidenfoxivey">mastodon</a></li>
-    <li><a href="https://git.sr.ht/~aidenfoxivey">sourcehut repositories</a></li>
-    <li><a href="https://github.com/aidenfoxivey">github repositories</a></li>
+  <li><a href="https://flowcv.com/resume/pdig8u9c7a">resume</a></li>
+  <li><a href="{{ get_url(path="@/blog/_index.md") }}">blog posts</a></li>
+  <li><a rel="me" href="https://mastodon.social/@aidenfoxivey">mastodon</a></li>
+  <li><a href="https://git.sr.ht/~aidenfoxivey">sourcehut repositories</a></li>
+  <li><a href="https://github.com/aidenfoxivey">github repositories</a></li>
 </ul>
 
 <h3>Contact me:</h3>
 <ul>
-    <li><a href="https://t.me/aidenfoxivey">t.me/aidenfoxivey</a></li>
-    <li><a href="mailto:aiden@fox-ivey.com">aiden@fox-ivey.com</a></li>
-    <li><a href="mailto:abfoxive@uwaterloo.ca">abfoxive@uwaterloo.ca</a></li>
+  <li><a href="https://t.me/aidenfoxivey">t.me/aidenfoxivey</a></li>
+  <li><a href="mailto:aiden@fox-ivey.com">aiden@fox-ivey.com</a></li>
+  <li><a href="mailto:abfoxive@uwaterloo.ca">abfoxive@uwaterloo.ca</a></li>
 </ul>
 
-
 <footer>
-    <div class="rc-scout">
-        <script async defer>
-            ; (function(w, d) {
-
-                if (!w._rcs) {
-                    w._rcs = { token: '62f8b80545052a01124e401dea15d64c', type: 'logo_and_text' };
-                }
-
-                var s = d.createElement('script');
-                s.async = true;
-                s.src = './scout.js';
-                d.body.appendChild(s);
-
-            })(window, document);
-        </script>
-    </div>
+  <div class="rc-scout">
+    <script>
+      (function (w, d) {
+        if (!w._rcs) {
+          w._rcs = {
+            token: "62f8b80545052a01124e401dea15d64c",
+            type: "logo_and_text",
+          };
+        }
+        var s = d.createElement("script");
+        s.async = true;
+        s.src = "./scout.js";
+        d.body.appendChild(s);
+      })(window, document);
+    </script>
+  </div>
 </footer>
 
 {% endblock content %}
