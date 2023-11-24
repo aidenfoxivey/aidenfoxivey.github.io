@@ -136,6 +136,7 @@ blockquote {
   border-radius: 4px;
   padding: 5px;
   margin: auto;
+  box-shadow: 2px 2px 10px #ccc;
 }
 
 .portrait_container {
