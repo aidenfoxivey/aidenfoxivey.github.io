@@ -6,7 +6,7 @@ draft = false
 
 # Dr. Nullptr
 
-### Or, how I learned to stop worrying and love dynamic memory allocation.
+### Or, how I learned to stop worrying and love dynamic memory allocation
 
 So, you're an ECE150 student at the University of Waterloo. Maybe you have a bit
 of experience programming, maybe not. Regardless, prepare yourself for some bad
@@ -32,7 +32,7 @@ what
 
 #### Definition
 
-##### The heap versus the stack.
+##### The heap versus the stack
 
 Well, here you go again. Sorry to bother you with another explanation of
 something that's quite confusing.
@@ -51,15 +51,15 @@ other things.
 #include <stdio.h>
 
 void g(void) {
-	int a = 6;
+    int a = 6;
 }
 
 int main(void) {
-	int a = 4;
- 	int b = 3;
-	g();
-	printf("%d", a);  // this will print 4
-	return 0;
+    int a = 4;
+    int b = 3;
+    g();
+    printf("%d", a);  // this will print 4
+    return 0;
 }
 ```
 
@@ -120,20 +120,20 @@ In C, we use a function called `malloc` to access memory on the heap.
 #include <stdlib.h>
 
 int main(void) {
-	int* array = (int*)malloc(5*sizeof(int));
-	array[0] = 0;
-	array[1] = 1;
-	array[2] = 2;
-	array[3] = 342;
-	array[4] = 23;
+    int* array = (int*)malloc(5*sizeof(int));
+    array[0] = 0;
+    array[1] = 1;
+    array[2] = 2;
+    array[3] = 342;
+    array[4] = 23;
 
-	for (int i = 0; i < 5; i++) {
-		printf("%d", array[i]);
-	}
+    for (int i = 0; i < 5; i++) {
+        printf("%d", array[i]);
+    }
 
-	array[5] = 43; // this is a memory error!
+    array[5] = 43; // this is a memory error!
 
-	return 0;
+    return 0;
 }
 ```
 
@@ -144,7 +144,7 @@ block of memory.
 
 The `(int *)` tells `malloc` that we want it to refer to a pointer to an int.
 
-###### A quick word about `printf`:
+###### A quick word about `printf`
 
 What's that weird `%d` I see in there? What does that mean?
 
@@ -166,7 +166,7 @@ Dynamically allocated memory is useful when dealing with big objects (a large ar
 
 Another situation would be for resizing arrays. With statically allocated arrays, such as this `char arr[] = "Hello";`, you cannot resize it even if you want to. However, using dynamic allocation, you can resize using `realloc`, a function that finds you a new block of memory to store everything and puts the old contents of the memory there.
 
-Keep in mind that some programming paradigms avoid using the heap (where dynamic memory goes) because of the concern that dynamic allocation is much more likely to cause issues when programming mistakes are made than static allocation. 
+Keep in mind that some programming paradigms avoid using the heap (where dynamic memory goes) because of the concern that dynamic allocation is much more likely to cause issues when programming mistakes are made than static allocation.
 
 You probably won't need to worry about that style, but NASA does tend to use it.
 
@@ -174,12 +174,12 @@ You probably won't need to worry about that style, but NASA does tend to use it.
 
 Delete in C++ calls the destructor of an object. Sometimes these objects are built in and sometimes they're defined by the programmer. Usually calling delete on them just means that there are objects inside them that need to be freed them.
 
-Note that if you do not delete your memory, it will be leaked from your process. Due to how operating systems work, once the process (the executable) is finished, the operating system will clean it up for you, but on microcontrollers, it is very likely to just crash if you don't clean it up yourself. 
+Note that if you do not delete your memory, it will be leaked from your process. Due to how operating systems work, once the process (the executable) is finished, the operating system will clean it up for you, but on microcontrollers, it is very likely to just crash if you don't clean it up yourself.
 
 Also, if you try to allocate too much at the same time and don't `delete` any objects you no longer need, you can trivially get yourself an "OOM" error. (Out of memory.) Believe me, it's not good and it would make the computer scientists of yesteryear cry.
 
-##### A quick word on `null` and `nullptr`.
+##### A quick word on `null` and `nullptr`
 
-https://stackoverflow.com/questions/1282295/what-exactly-is-nullptr
+<https://stackoverflow.com/questions/1282295/what-exactly-is-nullptr>
 
 This is a really useful link for learning the complications with `NULL` and `nullptr`. Essentially, `nullptr` is a whole different type, whereas `NULL` is just a macro for 0. This means you can use `NULL` as an argument for a function that takes in an integer. Essentially, always opt to use `nullptr` in C++, since it is "type-safe". In C, it is generally more traditional to use `NULL`, even though `NULL` is not actually a whole different type.

@@ -2,9 +2,11 @@ base_url = "https://aidenfoxivey.com"
 compile_sass = false
 build_search_index = true
 default_language = "en"
+author = "Aiden Fox Ivey"
 
 [markdown]
 highlight_code = true
 
 [extra]
 generate_feed = true
+feed_filename = "atom.xml"
