@@ -1,5 +1,7 @@
 # aidenfoxivey.com
 
+[![Zola on GitHub Pages](https://github.com/aidenfoxivey/aidenfoxivey.github.io/actions/workflows/main.yml/badge.svg)](https://github.com/aidenfoxivey/aidenfoxivey.github.io/actions/workflows/main.yml)
+
 Welcome to my internet home. It's pretty simple.
 
 Links *may* change. I have not yet decided whether I intend on operating
