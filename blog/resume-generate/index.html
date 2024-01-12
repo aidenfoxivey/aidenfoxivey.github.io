@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Aiden Fox Ivey, Developer and Engineering Student.">
+  <link rel="stylesheet" href="/base.css" type="text/css">
+  <link rel="stylesheet" href="/ribbon.css" type="text/css">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <title>Aiden Fox Ivey</title>
+</head>
+
+<body>
+  <section class="section">
+    <div class="container">
+<h1 class="title">AutoResume &amp; Using SourceHut Builds</h1>
+<p class="subtitle"><strong>2023-01-05</strong></p>
+<i class="back_button"><a href="/blog">go back</a></i>
+<p>I have a resume written using LaTeX. It's honestly quite a pain. There's a part of me that refuses to use easy solutions but also finds complex solutions to be too painful to use. I don't like the lack of obvious / fine-grained customization afforded to me in applications like LibreOffice, but then setting up something like a LaTeX template is too much effort.</p>
+<p>This stupid conflict lead me down the path of finding someone's template. I had no idea what most of the template was there for. There are some obvious parts to LaTeX, like understanding what <code>\include{geometry}</code> might refer to, but a lot of it comes across as convoluted and produces mysterious error messages that are devoid of much context.</p>
+<p>Admittedly, I can't claim to really grokking LaTeX in any respect - so, if you are so inclined, treat my thoughts with some skepticism here. My previous solution was to use Overleaf, but with my web blog based on <code>zola</code> being built using Sourcehut's build service, I had the both amazing and awful idea to try to automate it.</p>
+<p>After all, (CLICHÉ PHRASE INBOUND!) why do something manually in 5 minutes when you could spend the better part of an afternoon struggling at it. I decided to add a small bit to my original build manifest on Sourcehut that would clone the resume repository and then install the texlive distribution onto the Alpine VMs that Sourcehut uses for builds.</p>
+<p>I've included the manifest below. There could be some issues, but it's working fine for me so far.</p>
+<pre data-lang="yaml" style="background-color:#2b303b;color:#c0c5ce;" class="language-yaml "><code class="language-yaml" data-lang="yaml"><span style="color:#bf616a;">image</span><span>: </span><span style="color:#a3be8c;">alpine/edge
+</span><span style="color:#bf616a;">packages</span><span>:
+</span><span>  - </span><span style="color:#a3be8c;">hut
+</span><span>  - </span><span style="color:#a3be8c;">zola
+</span><span>  - </span><span style="color:#a3be8c;">texlive-full
+</span><span>  - </span><span style="color:#a3be8c;">texlive-xetex
+</span><span style="color:#bf616a;">oauth</span><span>: </span><span style="color:#a3be8c;">pages.sr.ht/PAGES:RW
+</span><span style="color:#bf616a;">environment</span><span>:
+</span><span>  </span><span style="color:#bf616a;">site</span><span>: </span><span style="color:#a3be8c;">aidenfoxivey.com
+</span><span style="color:#bf616a;">sources</span><span>:
+</span><span>  - </span><span style="color:#a3be8c;">https://git.sr.ht/~aidenfoxivey/home
+</span><span>  - </span><span style="color:#a3be8c;">https://git.sr.ht/~aidenfoxivey/resume
+</span><span style="color:#bf616a;">tasks</span><span>:
+</span><span>  - </span><span style="color:#bf616a;">build</span><span>: </span><span style="color:#b48ead;">|
+</span><span style="color:#a3be8c;">      cd home
+</span><span style="color:#a3be8c;">      zola build
+</span><span>  - </span><span style="color:#bf616a;">resume</span><span>: </span><span style="color:#b48ead;">|
+</span><span style="color:#a3be8c;">      cd resume
+</span><span style="color:#a3be8c;">      xelatex -interaction=nonstopmode cv.tex
+</span><span style="color:#a3be8c;">      mv cv.pdf ../home/public/resume.pdf
+</span><span>  - </span><span style="color:#bf616a;">package</span><span>: </span><span style="color:#b48ead;">|
+</span><span style="color:#a3be8c;">      cd home
+</span><span style="color:#a3be8c;">      tar -C public -cvz . &gt; ../site.tar.gz
+</span><span>  - </span><span style="color:#bf616a;">upload</span><span>: </span><span style="color:#b48ead;">|
+</span><span style="color:#a3be8c;">      hut pages publish -d $site site.tar.gz
+</span><span style="color:#a3be8c;">
+</span></code></pre>
+<p>The <code>interaction=nonstopmode</code> prevents the <code>xelatex</code> command from halting at any warnings, but I'm not sure if this is entirely necessary considering that I believe the build will fail on any warnings.</p>
+<p>Essentially, the image specifies the operating system to be used. You can also specify the architecture if some of your software is only built for ARM64, MIPS, etc. For each task listed, the VM moves back to the home directory and then runs the commands executed.</p>
+<p>The sources are just git repos to be cloned for the build process.</p>
+<p>I don't know internally how this is parsed, but it methodology wise is similar to Dockerfiles.</p>
+<p>The result of this is that every time I finish a copy of my website and push it, Sourcehut will automatically generate the latest version of my resume and publish it to the website.</p>
+<p>The next issue is to figure out why in the world the PDF doesn't load on Safari.</p>
+<p>Keep on rocking in the free world.</p>
+ </div>
+  </section>
+</body>
+
+</html>

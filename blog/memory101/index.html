@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Aiden Fox Ivey, Developer and Engineering Student.">
+  <link rel="stylesheet" href="/base.css" type="text/css">
+  <link rel="stylesheet" href="/ribbon.css" type="text/css">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <title>Aiden Fox Ivey</title>
+</head>
+
+<body>
+  <section class="section">
+    <div class="container">
+<h1 class="title">Wait, how does memory work again?</h1>
+<p class="subtitle"><strong>2023-09-04</strong></p>
+<i class="back_button"><a href="/blog">go back</a></i>
+<h1 id="dr-nullptr">Dr. Nullptr</h1>
+<h3 id="or-how-i-learned-to-stop-worrying-and-love-dynamic-memory-allocation">Or, how I learned to stop worrying and love dynamic memory allocation</h3>
+<p>So, you're an ECE150 student at the University of Waterloo. Maybe you have a bit
+of experience programming, maybe not. Regardless, prepare yourself for some bad
+programming habits. Unfortunately, the course seems somewhat rife with
+opportunity to confuse yourself and end up with some pretty bad coding
+mistakes. Worse, even if you manage to do decently in the course, you may still
+completely misunderstand how it works.</p>
+<p>This leads to cargo cult programming, where we worship the idea of setting a
+pointer in C++ to <code>nullptr</code> after <code>delete</code>ing it, without really ever knowing
+why.</p>
+<p>The need for this struck me after I found myself trying to clear up what
+<code>delete</code> in C++ actually does and what memory &quot;safety&quot; actually means.</p>
+<p>You'll certainly hear about &quot;memory leaks&quot; or &quot;segfaults&quot; in programming
+courses, but what do they actually refer to? And, more importantly, why are
+they actually a problem?</p>
+<p>Before we start, we need to get a few things down. First we need to understand
+what the heap and the stack are, what &quot;scopes&quot; are in programming, and then
+what</p>
+<h4 id="definition">Definition</h4>
+<h5 id="the-heap-versus-the-stack">The heap versus the stack</h5>
+<p>Well, here you go again. Sorry to bother you with another explanation of
+something that's quite confusing.</p>
+<p>Basically, the stack is a place to temporarily store things. Whenever you
+declare a normal variable, you use the stack. The stack exists for each
+different &quot;scope&quot; that you go to.</p>
+<p>Woah there, a scope? What's a scope?</p>
+<p>Here's a quick C example that I'll annotate. Notice that it could be compiled
+(turned into computer code) into C++. This is because C++ is <strong>mostly</strong> C plus
+other things.</p>
+<pre data-lang="c" style="background-color:#2b303b;color:#c0c5ce;" class="language-c "><code class="language-c" data-lang="c"><span style="color:#b48ead;">#include </span><span>&lt;</span><span style="color:#a3be8c;">stdio.h</span><span>&gt;
+</span><span>
+</span><span style="color:#b48ead;">void </span><span style="color:#8fa1b3;">g</span><span>(</span><span style="color:#b48ead;">void</span><span>) {
+</span><span>    </span><span style="color:#b48ead;">int</span><span> a = </span><span style="color:#d08770;">6</span><span>;
+</span><span>}
+</span><span>
+</span><span style="color:#b48ead;">int </span><span style="color:#8fa1b3;">main</span><span>(</span><span style="color:#b48ead;">void</span><span>) {
+</span><span>    </span><span style="color:#b48ead;">int</span><span> a = </span><span style="color:#d08770;">4</span><span>;
+</span><span>    </span><span style="color:#b48ead;">int</span><span> b = </span><span style="color:#d08770;">3</span><span>;
+</span><span>    </span><span style="color:#bf616a;">g</span><span>();
+</span><span>    </span><span style="color:#96b5b4;">printf</span><span>(&quot;</span><span style="color:#d08770;">%d</span><span>&quot;, a);  </span><span style="color:#65737e;">// this will print 4
+</span><span>    </span><span style="color:#b48ead;">return </span><span style="color:#d08770;">0</span><span>;
+</span><span>}
+</span></code></pre>
+<p>Okay! Let's go through this example.</p>
+<p>First we declare that we're including <code>stdio.h</code>. All you need to know is that
+that's the code where <code>printf()</code> is held. We can only print if we include this
+file. You might ask: why would I need to include something in order to use a
+print function?  Especially if you've started with Python, where <code>print()</code> is a
+piece of the base language. Basically, it's because C is a simple language.
+This means it often runs much faster, because it doesn't need to be prepared to
+do as much as something like Python does.</p>
+<p>Next you'll notice the <code>void</code> keyword. It means that the function <code>g</code> doesn't
+take anything and doesn't return anything either. Sometimes you'll see people
+just write <code>void g()</code>, but technically this isn't good practice in C, because
+it interprets it as &quot;you can give me as many arguments as you want!&quot;. Try it
+yourself!</p>
+<p>From there, we declare an integer variable <code>a</code> and set it equal to four, declare
+an integer b equal to 3, call the <code>g()</code> function, and then print <code>a</code> out.</p>
+<p>When we call <code>g()</code>, we go into the scope of the function <code>g()</code>. The one rule
+about this is that we can access anything in a &quot;higher&quot; scope than the current
+one. We don't in my example, but we could totally write <code>printf(&quot;%d&quot;, b);</code> and
+have it print out 3. This is because we have all the declared variables from
+earlier here. This is a really important concept (and one that will motivate
+this post later). We can access anything before it, but writing things inside
+it have <strong>no</strong> effect when we exit the function call. As soon as we reach the
+end of <code>g()</code>, we go back to <code>main()</code> and lose everything we have inside this
+function.</p>
+<p>Okay, wait, we lose it all? I thought we could use functions to do things for us
+and then hand it back?</p>
+<p>Yes, yes you can. But not for everything! Only specific things. Some things can
+be copied trivially. For example, an integer can be <code>return</code>ed at the end of a
+function, but something like an array cannot (in C and C++). This is because an
+array is a block of memory; not just one individual piece.</p>
+<p>Now that we have lexical scopes down, let's talk about the heap.</p>
+<p>The heap is the place where we can place things that we want to live until we
+tell them not to. Basically,</p>
+<p>Unfortunately, ECE150 (and from what I know, other courses) don't often put much
+emphasis on what memory usage and safety in C++ actually consists of. I'll
+start with describing (for a novice, not someone more experienced) how memory
+works in C, which is a more simple language than C++. If you hear people
+complain about C++, it's often because it has a <strong>lot</strong> of features. Some of
+these features are good, some of these features are confusing, but most of the
+features have difficulties with compatibility between them.</p>
+<p>In C, we use a function called <code>malloc</code> to access memory on the heap.</p>
+<pre data-lang="c" style="background-color:#2b303b;color:#c0c5ce;" class="language-c "><code class="language-c" data-lang="c"><span style="color:#b48ead;">#include </span><span>&lt;</span><span style="color:#a3be8c;">stdio.h</span><span>&gt;
+</span><span style="color:#b48ead;">#include </span><span>&lt;</span><span style="color:#a3be8c;">stdlib.h</span><span>&gt;
+</span><span>
+</span><span style="color:#b48ead;">int </span><span style="color:#8fa1b3;">main</span><span>(</span><span style="color:#b48ead;">void</span><span>) {
+</span><span>    </span><span style="color:#b48ead;">int</span><span>* array = (</span><span style="color:#b48ead;">int</span><span>*)</span><span style="color:#96b5b4;">malloc</span><span>(</span><span style="color:#d08770;">5</span><span>*sizeof(</span><span style="color:#b48ead;">int</span><span>));
+</span><span>    array[</span><span style="color:#d08770;">0</span><span>] = </span><span style="color:#d08770;">0</span><span>;
+</span><span>    array[</span><span style="color:#d08770;">1</span><span>] = </span><span style="color:#d08770;">1</span><span>;
+</span><span>    array[</span><span style="color:#d08770;">2</span><span>] = </span><span style="color:#d08770;">2</span><span>;
+</span><span>    array[</span><span style="color:#d08770;">3</span><span>] = </span><span style="color:#d08770;">342</span><span>;
+</span><span>    array[</span><span style="color:#d08770;">4</span><span>] = </span><span style="color:#d08770;">23</span><span>;
+</span><span>
+</span><span>    </span><span style="color:#b48ead;">for </span><span>(</span><span style="color:#b48ead;">int</span><span> i = </span><span style="color:#d08770;">0</span><span>; i &lt; </span><span style="color:#d08770;">5</span><span>; i++) {
+</span><span>        </span><span style="color:#96b5b4;">printf</span><span>(&quot;</span><span style="color:#d08770;">%d</span><span>&quot;, array[i]);
+</span><span>    }
+</span><span>
+</span><span>    array[</span><span style="color:#d08770;">5</span><span>] = </span><span style="color:#d08770;">43</span><span>; </span><span style="color:#65737e;">// this is a memory error!
+</span><span>
+</span><span>    </span><span style="color:#b48ead;">return </span><span style="color:#d08770;">0</span><span>;
+</span><span>}
+</span></code></pre>
+<p>Inside of <code>malloc</code>, we pass 5 times the &quot;sizeof&quot; an integer in C. This allows us
+to specify how much we want to store in the memory. <code>malloc</code> will actually take
+just the number of bytes you want to store and then give you a pointer to that
+block of memory.</p>
+<p>The <code>(int *)</code> tells <code>malloc</code> that we want it to refer to a pointer to an int.</p>
+<h6 id="a-quick-word-about-printf">A quick word about <code>printf</code></h6>
+<p>What's that weird <code>%d</code> I see in there? What does that mean?</p>
+<p>Glad you asked! It's a &quot;character code&quot;, which tells printf how you want to
+display the data. Keep in mind that things like the characters that a computer
+uses to print out &quot;Hello, World!&quot; are actually just numbers themselves.
+(They're called ASCII if you use a simple latin character set without accents or other things.) This means that
+sometimes we want to see what number the character corresponds to and therefore
+need to tell the function whether we want to see it as a character or as a
+number. In this case, we're asking for <code>%d</code>, which means &quot;show me this data as
+an integer number&quot;. Another example would be <code>%f</code>, which means &quot;show me this
+data as a floating point number (a number with decimal point like 5.4)&quot;.</p>
+<h5 id="what-does-new-do">What does <code>new</code> do?</h5>
+<p>Well, when do I need dynamically allocated things? Great question!</p>
+<p>Dynamically allocated memory is useful when dealing with big objects (a large array), that you can't actually copy between places. Theoretically you can just treat it as being on the stack, but this is quite suboptimal due to the size of the stack.</p>
+<p>Another situation would be for resizing arrays. With statically allocated arrays, such as this <code>char arr[] = &quot;Hello&quot;;</code>, you cannot resize it even if you want to. However, using dynamic allocation, you can resize using <code>realloc</code>, a function that finds you a new block of memory to store everything and puts the old contents of the memory there.</p>
+<p>Keep in mind that some programming paradigms avoid using the heap (where dynamic memory goes) because of the concern that dynamic allocation is much more likely to cause issues when programming mistakes are made than static allocation.</p>
+<p>You probably won't need to worry about that style, but NASA does tend to use it.</p>
+<h5 id="what-does-delete-actually-do">What does <code>delete</code> actually do?</h5>
+<p>Delete in C++ calls the destructor of an object. Sometimes these objects are built in and sometimes they're defined by the programmer. Usually calling delete on them just means that there are objects inside them that need to be freed them.</p>
+<p>Note that if you do not delete your memory, it will be leaked from your process. Due to how operating systems work, once the process (the executable) is finished, the operating system will clean it up for you, but on microcontrollers, it is very likely to just crash if you don't clean it up yourself.</p>
+<p>Also, if you try to allocate too much at the same time and don't <code>delete</code> any objects you no longer need, you can trivially get yourself an &quot;OOM&quot; error. (Out of memory.) Believe me, it's not good and it would make the computer scientists of yesteryear cry.</p>
+<h5 id="a-quick-word-on-null-and-nullptr">A quick word on <code>null</code> and <code>nullptr</code></h5>
+<p><a href="https://stackoverflow.com/questions/1282295/what-exactly-is-nullptr">https://stackoverflow.com/questions/1282295/what-exactly-is-nullptr</a></p>
+<p>This is a really useful link for learning the complications with <code>NULL</code> and <code>nullptr</code>. Essentially, <code>nullptr</code> is a whole different type, whereas <code>NULL</code> is just a macro for 0. This means you can use <code>NULL</code> as an argument for a function that takes in an integer. Essentially, always opt to use <code>nullptr</code> in C++, since it is &quot;type-safe&quot;. In C, it is generally more traditional to use <code>NULL</code>, even though <code>NULL</code> is not actually a whole different type.</p>
+ </div>
+  </section>
+</body>
+
+</html>

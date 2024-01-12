@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/aidenfoxivey
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://aidenfoxivey.com
+  * I am aidenfoxivey (https://keybase.io/aidenfoxivey) on keybase.
+  * I have a public key ASAyz26CWZLl4FLTbxO3zWLf4_UhBn6pkCwcjArZk8HH6Qo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "012032cf6e825992e5e052d36f13b7cd62dfe3f521067ea9902c1c8c0ad993c1c7e90a",
+      "host": "keybase.io",
+      "kid": "012032cf6e825992e5e052d36f13b7cd62dfe3f521067ea9902c1c8c0ad993c1c7e90a",
+      "uid": "dfe64d791e257348ce3b1f17f969a819",
+      "username": "aidenfoxivey"
+    },
+    "merkle_root": {
+      "ctime": 1701732969,
+      "hash": "2cf3806d9c48b7a8ee34bbdb9b9eda8c0d24c017bad4f1d1936ba8fcdab90ea78917e50a1e584d98600ac0a803c67705473f078ebcd703a03f28aa1ef2620b7f",
+      "hash_meta": "96e1faec7ab7c83d7995d46505c6f5ae59c22fc5258ddac5c3a40258699dfee7",
+      "seqno": 25208912
+    },
+    "service": {
+      "entropy": "s64jKpiZhZcRxhI3LqCMRoEy",
+      "hostname": "aidenfoxivey.com",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "6.2.4"
+  },
+  "ctime": 1701733022,
+  "expire_in": 504576000,
+  "prev": "c7a33a4ee36ec9bb92d88a2e5699f6d88c414f07bef4696fc5bd53ffea79d78c",
+  "seqno": 9,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgMs9uglmS5eBS028Tt81i3+P1IQZ+qZAsHIwK2ZPBx+kKp3BheWxvYWTESpcCCcQgx6M6TuNuybuS2IouVpn22IxBTwe+9Glvxb1T/+p514zEIEMkbIXMNzumW9uUNSPm7CGJ5yEzsdJbocR11NN/ECi5AgHCo3NpZ8RAtpcexjIBBUN6UsydADEU0X6aeUtkz5PH3j0kPf8thia9ph6mOqOiwq88aPyFeG199XC9esLoO3uw7g7lgvG9A6hzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIKARH6GbYz7aaWRyoLEA+Kimk+ih0KM8NBtoe1fhPROgo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/aidenfoxivey
+
+==================================================================
